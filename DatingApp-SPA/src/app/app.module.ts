@@ -1,23 +1,20 @@
-// tslint:disable-next-line:quotemark
+/* tslint:disable */
 import { BrowserModule } from "@angular/platform-browser";
-// tslint:disable-next-line:quotemark
 import { NgModule } from "@angular/core";
-// tslint:disable-next-line:quotemark
 import { HttpClientModule } from "@angular/common/http";
-// tslint:disable-next-line:quotemark
 import { FormsModule } from "@angular/forms";
 
-// tslint:disable-next-line:quotemark
 import { AppComponent } from "./app.component";
-// tslint:disable-next-line:quotemark
 import { ValueComponent } from "./value/value.component";
-// tslint:disable-next-line:quotemark
 import { NavComponent } from "./nav/nav.component";
+import { AuthService } from "./_services/auth.service";
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, ValueComponent, NavComponent],
+  declarations: [AppComponent, ValueComponent, NavComponent, HomeComponent, RegisterComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
