@@ -46,6 +46,7 @@ namespace DatingApp.API
                 });
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
+            services.AddScoped<LogUserActivity>();
             services.AddTransient<Seed>();
             //TODO: lookup this some more, vid went through it really fast
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
