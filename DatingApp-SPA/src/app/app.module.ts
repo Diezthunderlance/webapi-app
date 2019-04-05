@@ -7,7 +7,8 @@ import {
   BsDropdownModule,
   TabsModule,
   BsDatepickerModule,
-  PaginationModule
+  PaginationModule,
+  ButtonsModule
 } from 'ngx-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
@@ -65,6 +66,7 @@ export function tokenGetter() {
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
     NgxGalleryModule,
     FileUploadModule,
     JwtModule.forRoot({
