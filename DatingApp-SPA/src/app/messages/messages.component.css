@@ -1,0 +1,12 @@
+table {
+  margin-top: 15px;
+}
+
+/* is setting images size to max by pixels going to create issues for different screen sizes? */
+.img-circle {
+  max-height: 50px;
+}
+
+td {
+  vertical-align: middle;
+}
