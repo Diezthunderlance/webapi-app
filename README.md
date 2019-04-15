@@ -12,7 +12,7 @@ Below is a list of general info on the list of features of the website, along wi
 Once the website is actually up on your machine, it should hopefully be intuitive how to use the website itself from a UI perrsepctive.
 Please inform  me if that is not the case, and I can provide a general user guide.
 
-##Info
+## Info
 
 The application is currently a simple dating website. 
 After registering as a new user, a user can:
@@ -25,19 +25,19 @@ After registering as a new user, a user can:
 DatingApp-SPA contains all front end components (developed via angular), 
 while DatingApp.API contains the API using ASP.NET core, and manages the database via EntityFramework core
 
-##Running
+## Running
 
 Run the website by running `npm install` then `ng serve` after cding into DatingApp-SPA, 
 and running `dotnet run` while in DatingApp.API.
 
-##Basic Documentation
+## Basic Documentation
 
 ##DatingApp-SPA 
 Built mostly with angular, and styled primarily using [ngx bootstrap](https://valor-software.com/ngx-bootstrap/#/).
 [Alertify](https://alertifyjs.com/) was used to handle user notifications.
 RxJs was used as well to handle observables.
 
-##DatingApp.API
+## DatingApp.API
 
 [AutoMapper](https://automapper.org/) to handle mapping objects.
 [Cloudinary](https://cloudinary.com/) was used to uploading and storing user photos.
@@ -45,6 +45,8 @@ RxJs was used as well to handle observables.
 [Postman](https://www.getpostman.com/) was used for debugging the API.
 [NewtonSoft](https://www.newtonsoft.com/json) was used for adding pagination info into header
 
-##General Concerns
+## General Concerns
+
+Will be updated shortly
 
 
