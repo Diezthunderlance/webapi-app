@@ -30,11 +30,12 @@ while DatingApp.API contains the API using ASP.NET core, and manages the databas
 This application was developed in Visual Studio Code, mainly following a Udemy tutorial.
 
 ## Running
-CD into DatingApp-SPA, and run `npm install` then `ng serve`. 
 
-Then cd into DatingApp.API and uncomment `//seeder.SeedUsers();` in [startup.cs](DatingApp.API/Startup.cs). 
+First, cd into DatingApp.API and uncomment `//seeder.SeedUsers();` in [startup.cs](DatingApp.API/Startup.cs). 
 
 Then run `dotnet run`.
+
+Finally, cd into DatingApp-SPA, and run `npm install` then `ng serve`. 
 
 ## DatingApp-SPA Libraries
 
@@ -116,14 +117,21 @@ As I was developing the website, these are the questions I compiled directly rel
 
 These are a list of concerns regarding the *code itself* that I wrote. I was unable to answer these questions after doing research, so **these are the questions that I would appreciate the most help in**:
   
-  Currently I am storing only the user id and login/logout time in my JWT token.
+  **JWT Tokens:**
+  - Currently I am storing only the user id and login/logout time in my JWT token.
   - (see [AuthController.cs](DatingApp.API/Controllers/AuthController.cs) and [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts))
-  - Is there any other info I could or should store in there?
+    - Is there any other info I could or should store in the tokens?
   
-  Currently I believe the only info I pass into the HTTP header is pagination formatting data for messages and users, along with application errors.
+  **HTTP Headers**
+  - Currently I believe the only info I pass into the HTTP header is pagination formatting data for messages and users, along with application errors.
   - (see [PaginationHeader.cs](DatingApp.API/Helpers/PaginationHeader.cs), [extensions.cs](DatingApp.API/Helpers/Extensions.cs))
   - In general, what info should be passed into the http header? What kind of info should be stored there?
-
+  
+  **DTOs:**
+  - The way that I handle object mapping feels like it could run into issues of readability in the future. Even with my website having only basic features, the current organizational structure feels like it is lacking, and it could be unclear which DTO to use in a given situation to someone other than me.
+  - (see [DatingApp.API/Dtos](DatingApp.API/Dtos))
+  -Is there any practice I can employ to ensure better maintainability for the future?
+  
   
   
   
