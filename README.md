@@ -9,7 +9,7 @@ If I am doing anything that could be described as a "bad practice" please inform
 
 Below is a list of general info on the list of features of the website, along with how to run it and how it was built.
 
-Once the website is actually up on your machine, it should hopefully be intuitive how to use the website itself from a UI perrsepctive.
+Once the website is actually up on your machine, it should hopefully be intuitive how to use the website itself from a UI persepctive.
 Please inform  me if that is not the case, and I can provide a general user guide.
 
 ## Info
@@ -30,9 +30,8 @@ while DatingApp.API contains the API using ASP.NET core, and manages the databas
 Run the website by running `npm install` then `ng serve` after cding into DatingApp-SPA, 
 and running `dotnet run` while in DatingApp.API.
 
-## Basic Documentation
+## DatingApp-SPA 
 
-##DatingApp-SPA 
 Built mostly with angular, and styled primarily using [ngx bootstrap](https://valor-software.com/ngx-bootstrap/#/).
 [Alertify](https://alertifyjs.com/) was used to handle user notifications.
 RxJs was used as well to handle observables.
