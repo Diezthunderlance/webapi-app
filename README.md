@@ -30,11 +30,13 @@ while DatingApp.API contains the API using ASP.NET core, and manages the databas
 This application was developed in Visual Studio Code, mainly following a Udemy tutorial.
 
 ## Running
+CD into DatingApp-SPA, and run `npm install` then `ng serve`. 
 
-Run the website by running `npm install` then `ng serve` after cding into DatingApp-SPA, 
-and running `dotnet run` while in DatingApp.API.
+Then cd into DatingApp.API and uncomment `//seeder.SeedUsers();` in [startup.cs](DatingApp.API/Startup.cs). 
 
-## DatingApp-SPA 
+Then run `dotnet run`.
+
+## DatingApp-SPA Libraries
 
 [ngx bootstrap](https://valor-software.com/ngx-bootstrap/#/) was used for general styling.
 
@@ -42,7 +44,7 @@ and running `dotnet run` while in DatingApp.API.
 
 [RxJs](http://reactivex.io/) was used as well to handle observables.
 
-## DatingApp.API
+## DatingApp.API Libraries
 
 [AutoMapper](https://automapper.org/) to handle mapping objects.
 
@@ -112,13 +114,15 @@ As I was developing the website, these are the questions I compiled directly rel
 
 ## Specific Technical Concerns
 
-These are a list of concerns regarding the *code itself* that I wrote:
+These are a list of concerns regarding the *code itself* that I wrote. I was unable to answer these questions after doing research, so **these are the questions that I would appreciate the most help in**:
   
-  Currently I am storing only the user id and login/logout time in my JWT token (see [AuthController.cs](DatingApp.API/Controllers/AuthController.cs) and [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts)).
-  - Is there any other info I could or should store in there? 
-  - I was unable to find a general guideline for best practices regarding jwt tokens.
-
-  In general, what info should be passed into the http header? What kind of info should be stored there?
+  Currently I am storing only the user id and login/logout time in my JWT token.
+  - (see [AuthController.cs](DatingApp.API/Controllers/AuthController.cs) and [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts))
+  - Is there any other info I could or should store in there?
+  
+  Currently I believe the only info I pass into the HTTP header is pagination formatting data for messages and users, along with application errors.
+  - (see [PaginationHeader.cs](DatingApp.API/Helpers/PaginationHeader.cs), [extensions.cs](DatingApp.API/Helpers/Extensions.cs))
+  - In general, what info should be passed into the http header? What kind of info should be stored there?
 
   
   
