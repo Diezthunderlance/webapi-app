@@ -122,7 +122,7 @@ These are a list of concerns regarding the *code itself* that I wrote. I was una
   - (see [AuthController.cs](DatingApp.API/Controllers/AuthController.cs) and [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts))
     - Is there any other info I could or should store in the tokens?
   
-  **HTTP Headers**
+  **HTTP Headers:**
   - Currently I believe the only info I pass into the HTTP header is pagination formatting data for messages and users, along with application errors.
   - (see [PaginationHeader.cs](DatingApp.API/Helpers/PaginationHeader.cs), [extensions.cs](DatingApp.API/Helpers/Extensions.cs))
   - In general, what info should be passed into the http header? What kind of info should be stored there?
@@ -130,7 +130,12 @@ These are a list of concerns regarding the *code itself* that I wrote. I was una
   **DTOs:**
   - The way that I handle object mapping feels like it could run into issues of readability in the future. Even with my website having only basic features, the current organizational structure feels like it is lacking, and it could be unclear which DTO to use in a given situation to someone other than me.
   - (see [DatingApp.API/Dtos](DatingApp.API/Dtos))
-  -Is there any practice I can employ to ensure better maintainability for the future?
+  - Is there any practice I can employ to ensure better maintainability for the future?
+  
+  **UserParams:**
+  - Currently, it seems like there is really tight coupling regarding user filter parameters. In addition, it appears that scalability will also be an issue the more filters there are. 
+  - As it stands, adding a single extra filter to [UserParams.cs](DatingApp.API/Helpers/UserParams.cs), would require updating the db query logic for getUsers in [DatingRepository.cs](DatingApp.API/Data/DatingRepository.cs), the form logic in (member-list.component.ts)[DatingApp-SPA/src/app/members/member-list/member-list.component.ts], the html in [member-list.component.html](DatingApp-SPA/src/app/members/member-list/member-list.component.html), and getUsers in [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts)!
+  - What can I do to improve scalability and reduce the coupling between these different files?
   
   
   
