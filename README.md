@@ -90,9 +90,9 @@ These sorts of questions are ones that I can probably answer myself as I gain mo
   
   Is the website intuitive to use?
  
-## Concerns regading specific practices
+## Broad Technical Concerns
 
-As I was developing the website, these are the questions I compiled directly related to specific techniques I used, but are not about any specific code in general.
+As I was developing the website, these are the questions I compiled directly related to specific techniques I used, but are not about any specific bit of code in general.
 
   Would my website be improved if I implemented cookies and browser caching? If so, what should I be storing with them?
   - (To my knowledge, I currently don't use any sorts of cookies or caching, unless angular handles anything behind the scenes.)
@@ -130,7 +130,7 @@ These are a list of concerns regarding the *code itself* that I wrote. I was una
   **DTOs:**
   - The way that I handle object mapping feels like it could run into issues of readability in the future. Even with my website having only basic features, the current organizational structure feels like it is lacking, and it could be unclear which DTO to use in a given situation to someone other than me.
   - (see [DatingApp.API/Dtos](DatingApp.API/Dtos))
-  - Is there any practice I can employ to ensure better maintainability for the future?
+  - Is there any practice I can employ to ensure better maintainability for the future? (Note that I am already using autoMapper.)
   
   **UserParams:**
   - Currently, it seems like there is really tight coupling regarding user filter parameters. In addition, it appears that scalability will also be an issue the more filters there are. 
