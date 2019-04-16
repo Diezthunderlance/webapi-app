@@ -137,7 +137,7 @@ These are a list of concerns regarding the *code itself* that I wrote. I was una
   
   **UserParams:**
   - Currently, it seems like there is really tight coupling regarding user filter parameters. In addition, it appears that scalability will also be an issue the more filters there are. 
-  - As it stands, adding a single extra filter to [UserParams.cs](DatingApp.API/Helpers/UserParams.cs), would require updating the db query logic for `getUsers` in [DatingRepository.cs](DatingApp.API/Data/DatingRepository.cs), the form logic in (member-list.component.ts)[DatingApp-SPA/src/app/members/member-list/member-list.component.ts], the html in [member-list.component.html](DatingApp-SPA/src/app/members/member-list/member-list.component.html), and `getUsers` in [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts)!
+  - As it stands, adding a single extra filter to [UserParams.cs](DatingApp.API/Helpers/UserParams.cs), would require updating the db query logic for `getUsers()` in [DatingRepository.cs](DatingApp.API/Data/DatingRepository.cs), the form logic in [member-list.component.ts](DatingApp-SPA/src/app/members/member-list/member-list.component.ts), the html in [member-list.component.html](DatingApp-SPA/src/app/members/member-list/member-list.component.html), and `getUsers()` in [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts)!
   - What can I do to improve scalability and reduce the coupling between these different files?
   
   **Messaging:**
