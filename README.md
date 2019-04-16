@@ -143,7 +143,7 @@ These are a list of concerns regarding the *code itself* that I wrote. I was una
   **Messaging:**
   - Currently, if a user receives a new message, they will not be notified until they refresh the page. It is my understanding that I would need to maintain a constant connection to the api in order for the chat feature to function without refreshing.
   - How could I best implement a constant api connection? (I have heard I could use [SignalR](https://github.com/aspnet/SignalR) for this, but am unsure if that is the current best approach.)
-  - (see `getMessageThread()` [DatingRepository.cs](https://github.com/MatthewMerc-Wipro/Angular-WebAPI/blob/master/DatingApp.API/Data/DatingRepository.cs), [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts), and `loadMessages()` in [member-messages.component.ts](DatingApp-SPA/src/app/members/member-messages/member-messages.component.ts).)
+  - (see `getMessageThread()` [DatingRepository.cs](https://github.com/MatthewMerc-Wipro/Angular-WebAPI/blob/master/DatingApp.API/Data/DatingRepository.cs), [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts), and `loadMessages()` in [member-messages.component.ts](DatingApp-SPA/src/app/members/member-messages/member-messages.component.ts))
   
   
   
