@@ -75,13 +75,13 @@ These sorts of questions are ones that I can probably answer myself as I gain mo
 
   Does my code appear to be maintainable in the long run?
   
-  If I were to hand the program off to someone else, would they be able to further develop it without my help?
+  **If I were to hand the program off to someone else, would they be able to further develop it without my help?**
   
   Does it appear that my code can be scalable? 
   
   Are there any current sections of my code that would be hard to add future features to?
   
-  Is my website secure? 
+  **Is my website secure?**
   - (IE if a malicious actor attacked my website, what is the most damaging thing he can do?)
   
   If my website has an insecurity, based on the code, how easy would it be to add more security?
@@ -94,24 +94,27 @@ These sorts of questions are ones that I can probably answer myself as I gain mo
 
 As I was developing the website, these are the questions I compiled directly related to specific techniques I used, but are not about any specific bit of code in general.
 
-  Would my website be improved if I implemented cookies and browser caching? If so, what should I be storing with them?
-  - (To my knowledge, I currently don't use any sorts of cookies or caching, unless angular handles anything behind the scenes.)
+  **Cookies and caching**
+  - To my knowledge, I currently don't use any sorts of cookies or caching, unless angular handles anything behind the scenes.
+  - Would my website be improved if I implemented cookies and browser caching? If so, what should I be storing with them?
   
-  How can I improve the css to better support different screen sizes? Should this sort of website work just as well on mobile?
+  **CSS**
+  - How can I improve the css to better support different screen sizes? Should this sort of website work just as well on mobile?
   - (I think I would just need to research more css, as well as change how image sizing works.)
   
-  How can I best handle manual changes to the database?
-  - (For example, I believe if I manually delete a user's profile picture from the db itself, the user's profile picture settings break until another photo is uploaded. This specific issue could probably be fixed by changing code when fetching primary photo, but there might be more bugs of this nature in my code currently.)
+  **Database Management**
+  - How can I best handle manual changes to the database?
+  - For example, I believe if I manually delete a user's profile picture from the db itself, the user's profile picture settings break until another photo is uploaded. This specific issue could probably be fixed by changing code when fetching primary photo, but there might be more bugs of this nature in my code currently.
 
-
-  What kind of errors should be displayed to a user? To a developer?
+  **Error Display**
+  - What kind of errors should be displayed to a user? To a developer?
   - (User errors are currently displayed via alertify, and are primarily for failures in db updates or authorization.)
   
+  **Libraries**
+  - Are there any third-party libraries that I should be implementing to simplify my code?
   
-  Are there any third-party libraries that I should be implementing to simplify my code?
-
-
-  Is this ReadMe acceptable? Is there not enough or too much detail in any section? How can I better organize/format it?
+  **Readme**
+  - Is this ReadMe acceptable? Is there not enough or too much detail in any section? How can I better organize/format it?
 
 ## Specific Technical Concerns
 
@@ -134,8 +137,13 @@ These are a list of concerns regarding the *code itself* that I wrote. I was una
   
   **UserParams:**
   - Currently, it seems like there is really tight coupling regarding user filter parameters. In addition, it appears that scalability will also be an issue the more filters there are. 
-  - As it stands, adding a single extra filter to [UserParams.cs](DatingApp.API/Helpers/UserParams.cs), would require updating the db query logic for getUsers in [DatingRepository.cs](DatingApp.API/Data/DatingRepository.cs), the form logic in (member-list.component.ts)[DatingApp-SPA/src/app/members/member-list/member-list.component.ts], the html in [member-list.component.html](DatingApp-SPA/src/app/members/member-list/member-list.component.html), and getUsers in [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts)!
+  - As it stands, adding a single extra filter to [UserParams.cs](DatingApp.API/Helpers/UserParams.cs), would require updating the db query logic for `getUsers` in [DatingRepository.cs](DatingApp.API/Data/DatingRepository.cs), the form logic in (member-list.component.ts)[DatingApp-SPA/src/app/members/member-list/member-list.component.ts], the html in [member-list.component.html](DatingApp-SPA/src/app/members/member-list/member-list.component.html), and `getUsers` in [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts)!
   - What can I do to improve scalability and reduce the coupling between these different files?
+  
+  **Messaging:**
+  - Currently, if a user receives a new message, they will not be notified until they refresh the page. It is my understanding that I would need to maintain a constant connection to the api in order for the chat feature to function without refreshing.
+  - How could I best implement a constant api connection? (I have heard I could use [SignalR](https://github.com/aspnet/SignalR) for this, but am unsure if that is the current best approach.)
+  - (see `getMessageThread()` [DatingRepository.cs](https://github.com/MatthewMerc-Wipro/Angular-WebAPI/blob/master/DatingApp.API/Data/DatingRepository.cs), [user.service.ts](DatingApp-SPA/src/app/_services/user.service.ts), and `loadMessages()` in [member-messages.component.ts](DatingApp-SPA/src/app/members/member-messages/member-messages.component.ts).)
   
   
   
