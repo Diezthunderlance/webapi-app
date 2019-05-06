@@ -42,40 +42,36 @@
         </option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary" style="margin-left:10px">
-      Apply Filters
-    </button>
-    <button
-      type="button"
-      class="btn btn-info"
-      style="margin-left:10px"
-      (click)="resetFilter()"
-    >
-      Reset Filter
-    </button>
-    <div class="col">
-      <div class="btn-group float-right">
-        <button
-          type="button"
-          name="orderBy"
-          class="btn btn-primary"
-          [(ngModel)]="userParams.orderBy"
-          (click)="loadUsers()"
-          btnRadio="lastActive"
-        >
-          Last Active
-        </button>
-        <button
-          type="button"
-          name="orderBy"
-          class="btn btn-primary"
-          [(ngModel)]="userParams.orderBy"
-          (click)="loadUsers()"
-          btnRadio="created"
-        >
-          Newest Members
-        </button>
-      </div>
+    <div class="btn-group float-right">
+      <button type="submit" class="btn btn-primary" style="margin-left:.63rem">
+        Apply Filters
+      </button>
+      <button type="button" class="btn btn-info" (click)="resetFilter()">
+        Reset Filter
+      </button>
+    </div>
+
+    <div class="btn-group float-right" style="margin-left:.63rem">
+      <button
+        type="button"
+        name="orderBy"
+        class="btn btn-primary"
+        [(ngModel)]="userParams.orderBy"
+        (click)="loadUsers()"
+        btnRadio="lastActive"
+      >
+        Last Active
+      </button>
+      <button
+        type="button"
+        name="orderBy"
+        class="btn btn-primary"
+        [(ngModel)]="userParams.orderBy"
+        (click)="loadUsers()"
+        btnRadio="created"
+      >
+        Newest Members
+      </button>
     </div>
   </form>
   <br />
